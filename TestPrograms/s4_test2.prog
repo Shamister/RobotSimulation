@@ -1,0 +1,6 @@
+var $dvg = 10;
+
+while (! ($dvg == 0)){
+	move;
+	turnL;
+}

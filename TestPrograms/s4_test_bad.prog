@@ -1,0 +1,6 @@
+var $abc = (30 + (1 / 2));
+if (true){
+	var $bcd = 200;
+}
+
+$bcd = 300;

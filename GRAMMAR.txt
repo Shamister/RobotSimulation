@@ -1,0 +1,25 @@
+PROG  ::= STMT*
+STMT  ::= ACT; | ASSGN; | DCLR; | LOOP | IF | WHILE | DO; |
+          { STMT* }
+DCLR  ::= var VAR = EXP
+ASSGN ::= VAR = EXP
+VAR   ::= "\\$[A-Za-z][A-Za-z0-9]*"
+LOOP  ::= loop STMT
+IF    ::= if ( COND ) STMT [elif ( COND ) STMT ]*
+          [else STMT]
+WHILE ::= while ( COND ) STMT
+DO    ::= do STMT while ( COND )
+ACT   ::= move [( EXP )] | turnL | turnR |
+	  turnAround | shieldOn ( COND )  | takeFuel |
+	  wait [( EXP )]
+EXP   ::= NUM | EXP OP EXP |  SEN | VAR | ( EXP )
+SEN   ::= fuelLeft | oppLR | oppFB | numBarrels | 
+	  barrelLR [( EXP )] | barrelFB [( EXP )] |
+	  wallDist
+OP    ::= + | - | * | /
+COND  ::= BOOL | COND LOGIC COND | ! COND |
+          EXP COMP EXP | ( COND )
+LOGIC ::= && | || | ^
+COMP  ::= < | <= | > | >= | == | !=
+NUM   ::= "-?[1-9][0-9]*|0"
+BOOL  ::= true | false

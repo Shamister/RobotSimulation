@@ -1,0 +1,18 @@
+var $abc = ((((1 + 2) / 2 * 9 + 2) - 1 + 5 - -1 + 100 * 20 / 2 / (1 + 2 - 3 + 2 + 100)));
+var $bcd = 4 / 3 / 2 / 1 - 500;
+if ($abc >= $bcd){
+	move;
+	turnL;
+	while ($abc < $bcd){
+		var $abc = (((1 / 10) + 20) - 2) + 500;
+		var $bcd = 100;
+		move;
+		$abc = $abc - 100;
+	}
+	$abc = 0;
+}
+
+while ($abc == 0){
+	move;
+	turnR;
+}
